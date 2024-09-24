@@ -50,7 +50,12 @@ class Hero:
         new_level = self.get_new_level()
         return new_level
 
-    def add_skills(self):
+    def add_skill(self):
+        able_skills = [self.get_skills()]
+        print(f"Вам доступны следующие навыки:{self.get_skills()})"
+        chosen_skill = input("Выберите навык: ")
+        self.my_hero_skills.append(chosen_skill)
+
 
 
 
