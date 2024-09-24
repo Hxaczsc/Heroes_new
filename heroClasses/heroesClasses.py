@@ -6,10 +6,10 @@ class Hero:
 
     def __init__(self, name):
         """Написан конструктор для класса"""
-        self.name = name
-        self.my_hero_skills = []
-        self.level = 0
-        self.exp = 0
+        self.__name = name
+        self.__my_hero_skills = []
+        self.__level = 0
+        self.__exp = 0
 
     def get_skills(self, character_class):
         """Добавлен геттер для навыков, результат зависит от выбранного класса"""
@@ -41,9 +41,11 @@ class Hero:
         new_level = self.get_new_level()
         return new_level
 
-    def add_skill(self):
+    def add_skills(self):
         pass
 
 
 class MyHero(Hero):
-    pass
+
+
+
