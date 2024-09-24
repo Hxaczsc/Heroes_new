@@ -47,5 +47,7 @@ class Hero:
 
 class MyHero(Hero):
 
+    def __init__(self, class):
+        self.__class = class
 
 
