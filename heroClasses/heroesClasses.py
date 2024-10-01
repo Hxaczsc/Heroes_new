@@ -13,21 +13,24 @@ class Hero:
 
     def get_name(self):
         return self.__name
+
     def get_MyHeroSkills(self):
         return self.__my_hero_skills
+
     def get_level(self):
         return self.__level
+
     def get_exp(self):
         return self.__exp
 
     def get_skills(self, character_class):
         """Добавлен геттер для навыков, результат зависит от выбранного класса"""
-        if character_class == 'воин':
-            return self.__warrior_skills
-        elif character_class == 'маг':
-            return self.__mage_skills
-        elif character_class == 'рейнджер':
-            return self.__ranger_skills
+        if character_class == "воин":
+            return self.__warrior_skills.copy()
+        elif character_class == "маг":
+            return self.__mage_skills.copy()
+        elif character_class == "рейнджер":
+            return self.__ranger_skills.copy()
         else:
             exit("Ошибка перезапустите программу!")
 
@@ -51,19 +54,30 @@ class Hero:
         return new_level
 
     def add_skill(self):
-        able_skills = [self.get_skills()]
-        print(f"Вам доступны следующие навыки:{self.get_skills()})"
-        chosen_skill = input("Выберите навык: ")
-        self.my_hero_skills.append(chosen_skill)
-
-
+        pass
 
 
 class MyHero(Hero):
 
-    def __init__(self, character_class):
+    def __init__(self, name, character_class):
+        super().__init__(name)
         self.__character_class = character_class
+        self.__skills_list = super().get_skills(character_class)
+
+    def get_SkillsList(self):
+        return self.__skills_list
+
+    def add_skill(self):
+        print(f"Вам доступны следующие навыки:{self.get_skills(self)}")
+        chosen_skill = input("Выберите навык: ")
+        self.my_hero_skills.append(chosen_skill)
 
     def get_class(self):
         return self.__character_class
 
+
+gimli = MyHero("Гимли", "воин")
+print(gimli.get_SkillsList())
+# print(gimli.add_exp(200))
+# print(gimli.add_exp(300))
+# print(gimli.add_exp(500))
