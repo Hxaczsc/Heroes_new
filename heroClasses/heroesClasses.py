@@ -77,7 +77,6 @@ class MyHero(Hero):
 
 
 gimli = MyHero("Гимли", "воин")
-print(gimli.get_SkillsList())
-# print(gimli.add_exp(200))
-# print(gimli.add_exp(300))
-# print(gimli.add_exp(500))
+print(gimli.add_exp(200))
+print(gimli.add_exp(300))
+print(gimli.add_exp(500))
